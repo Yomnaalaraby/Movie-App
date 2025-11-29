@@ -1,0 +1,125 @@
+.card {
+    position: relative;
+    overflow: hidden;
+    margin-left: 15px;
+}
+
+.card img {
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card:hover img {
+    transform: rotate(5deg) scale(1.25);
+    filter: blur(1px);
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    padding-top: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.layer h1 {
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.layer p,
+.layer .rate-box,
+.layer span {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover .layer {
+    opacity: 1;
+}
+
+.card:hover .layer h1 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card:hover .layer p,
+.card:hover .layer .rate-box,
+.card:hover .layer span {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.rate-box span {
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    line-height: 35px;
+}
+
+.categories li {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100px !important;
+    border-radius: 3px;
+
+}
+
+button:hover {
+    background-color: aliceblue !important;
+    color: black;
+}
+
+.move-right {
+    transform: translateX(200px);
+    background-color: red !important;
+}
+
+#submitBtn {
+    transition: all 0.3s ease-in-out;
+}
+
+#sideBar {
+    left: -240px;
+    z-index: 99999;
+    transition: left 0.5s ease-in-out;
+}
+
+#sideBar.open {
+    left: 0px;
+}
+
+#navContent {
+    width: 240px;
+}
+
+#apperent {
+    width: 60px;
+}
+
+.hover-red {
+    transition: color 0.3s;
+}
+
+.hover-red:hover {
+    color: #dc3545 !important;
+}
+
+#back-to-top {
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
