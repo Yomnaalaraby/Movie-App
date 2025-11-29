@@ -123,3 +123,38 @@ button:hover {
     opacity: 0;
     transition: opacity 0.5s;
 }
+
+@media screen and (max-width: 768px) {
+    
+    body {
+        padding-left: 0 !important; 
+    }
+
+    #apperent {
+        background-color: transparent !important; /* يخلي الشريط شفاف عشان الصورة تبان تحته */
+        width: auto !important; /* عرضه يبقى على قد الزرار بس */
+        align-items: flex-start !important; /* يخلي الزرار فوق عالشمال */
+        padding-top: 20px !important; /* مسافة من فوق */
+        padding-left: 15px !important; /* مسافة من الشمال */
+    }
+
+    /* 3. تظبيط زرار القائمة (عشان يبان فوق الصور) */
+    #toggleBtn {
+        color: #fff !important; /* نخلي لونه أبيض عشان يبان ع الخلفية السوداء */
+        background-color: rgba(0, 0, 0, 0.5); /* (اختياري) خلفية سوداء شفافة ورا الزرار عشان يوضح */
+        padding: 5px 10px; /* نكبر مساحة الزرار شوية */
+        border-radius: 5px; /* تدوير الحواف */
+    }
+
+    /* 4. إخفاء اللوجو والأيقونات الزيادة في الموبايل لعدم الزحمة (زي الصورة) */
+    #navHeader img, 
+    #navHeader .icons {
+        display: none !important;
+    }
+
+    /* 5. تظبيط خانة البحث */
+    .search-container {
+        width: 90% !important; /* تاخد عرض الشاشة */
+        margin: 20px auto !important; /* توسيط */
+    }
+}
