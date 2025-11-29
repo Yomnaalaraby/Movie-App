@@ -127,18 +127,16 @@ function displayMovies(arr) {
 }
 getMovies("movie/now_playing");
 
-function searchMovies() {
-    let term = document.getElementById("searchInput").value.toLowerCase();
-
-    let matchedMovies = [];
-
-    for (let movie of allMovies) {
-        let title = movie.title || movie.name;
-        if (title.toLowerCase().includes(term)) {
-            matchedMovies.push(movie);
-        }
+async function searchMovies() {
+    let term = document.getElementById("searchInput").value;
+    if (term == "") {
+getMovies("movie/now_playing");
+        return;
     }
-    displayMovies(matchedMovies);
+    let url = `${baseUrl}/search/movie?api_key=${apiKey}&query=${term}`;
+    let response = await fetch(url);
+    let data = await response.json();
+    displayMovies(data.results);
 }
 
 toggleBtn.addEventListener("click", function () {
