@@ -126,11 +126,10 @@ function displayMovies(arr) {
     document.getElementById("rowData").innerHTML = cards;
 }
 getMovies("movie/now_playing");
-
 async function searchMovies() {
     let term = document.getElementById("searchInput").value;
     if (term == "") {
-getMovies("movie/now_playing");
+        getMovies("movie/now_playing");
         return;
     }
     let url = `${baseUrl}/search/movie?api_key=${apiKey}&query=${term}`;
